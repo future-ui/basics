@@ -1,3 +1,11 @@
+# Future-UI Basics
+
+This is an example environment built on top of react-hot-boilerplate,
+whose README is reproduced below.
+
+[App.js](https://github.com/future-ui/basics/blob/master/src/App.js)
+is the main file to look at if you're coming from the future-ui book.
+
 react-hot-boilerplate
 =====================
 
