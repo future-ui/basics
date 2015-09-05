@@ -1,55 +1,56 @@
-# Future-UI Basics
+# Future UI basics
 
-This is an example environment built on top of react-hot-boilerplate,
-whose README is reproduced below.
+This is an example environment built on top of
+react-transform-boilerplate, whose README is reproduced below.
 
-[App.js](https://github.com/future-ui/basics/blob/master/src/App.js)
-is the main file to look at if you're coming from the future-ui book.
+### React Transform Boilerplate
 
-react-hot-boilerplate
-=====================
+A *new* Webpack boilerplate with:
 
-The minimal dev environment to enable live-editing React components.
+* hot reloading React components;
+* error handling inside component `render()` function;
+* error handling for syntax errors (thanks,
+  **[@glenjamin](https://github.com/glenjamin)**!)
 
-### Usage
+Built with
+**[babel-plugin-react-transform](https://github.com/gaearon/babel-plugin-react-transform)**
+and a few custom transforms.
+**[Does not](https://medium.com/@dan_abramov/the-death-of-react-hot-loader-765fa791d7c4)**
+use React Hot Loader.
+
+[![react-transform channel on slack](https://img.shields.io/badge/slack-react--transform%40reactiflux-61DAFB.svg?style=flat-square)](http://www.reactiflux.com)
+
+## Demo
+
+![](http://i.imgur.com/AhGY28T.gif)
 
 ```
+git clone https://github.com/gaearon/react-transform-boilerplate.git
+cd react-transform-boilerplate
 npm install
 npm start
 open http://localhost:3000
 ```
 
-Now edit `src/App.js`.  
-Your changes will appear without reloading the browser like in [this video](http://vimeo.com/100010922).
+Then go ahead and edit files inside `src` (any file except `index.js`).
 
-### Linting
+## What’s Inside
 
-This boilerplate project includes React-friendly ESLint configuration.
 
-```
-npm run lint
-```
+The component instrumentation is implemented on top of **[babel-plugin-react-transform](https://github.com/gaearon/babel-plugin-react-transform)**:
 
-### Using `0.0.0.0` as Host
+* **[react-transform-webpack-hmr](https://github.com/gaearon/react-transform-webpack-hmr)** handles hot reloading
+* **[react-transform-catch-errors](https://github.com/gaearon/react-transform-catch-errors)** catches component errors
 
-You may want to change the host in `server.js` and `webpack.config.js` from `localhost` to `0.0.0.0` to allow access from same WiFi network. This is not enabled by default because it is reported to cause problems on Windows. This may also be useful if you're using a VM.
+The syntax errors are displayed in an overlay by
+**[@glenjamin](https://github.com/glenjamin)**’s
+**[webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware)**
+which replaces Webpack Dev Server.
 
-### Missing Features
+## Discussion
 
-This boilerplate is purposefully simple to show the minimal configuration for React Hot Loader. For a real project, you'll want to add a separate config for production with hot reloading disabled and minification enabled. You'll also want to add a router, styles and maybe combine dev server with an existing server. This is out of scope of this boilerplate, but you may want to look into [other starter kits](https://github.com/gaearon/react-hot-loader/blob/master/docs/README.md#starter-kits).
+You can discuss React Transform and related projects in **#react-transform** channel on [Reactiflux Slack](http://reactiflux.com).
 
-### Dependencies
+## License
 
-* React
-* Webpack
-* [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
-* [babel-loader](https://github.com/babel/babel-loader)
-* [react-hot-loader](https://github.com/gaearon/react-hot-loader)
-
-### Resources
-
-* [Demo video](http://vimeo.com/100010922)
-* [react-hot-loader on Github](https://github.com/gaearon/react-hot-loader)
-* [Integrating JSX live reload into your workflow](http://gaearon.github.io/react-hot-loader/getstarted/)
-* [Troubleshooting guide](https://github.com/gaearon/react-hot-loader/blob/master/docs/Troubleshooting.md)
-* Ping dan_abramov on Twitter or #reactjs IRC
+MIT
